@@ -29,28 +29,28 @@ USING THIS APP
 This guide I prefer to write in the form of questions and answers for ease of reading ...<br>
 Q. How to send a message?<br>
 A. When you navigate to the address http://{host_ip}:{port}/ Or alternatively to the address http://{host_ip}:{port}/index, You will get an html page where you can enter the message content and recipient names. Clicking the submit button activates the <AddMessage> function that creates a new message and stores it in the database.<br>
-Q. How to get messages?
-A. The messages can be received in 3 forms:
-- By application_id (which is actually the user_id. That is, if we had a button navigating to that address, the caption was: "Get all your messages") 
-http://{host_ip}:{port}/GetMessage?application_id=
-- By session_id 
-http://{host_ip}:{port}/GetMessage?session_id=
-- And according to the message_id - that is to receive a specific message
-http://{host_ip}:{port}/GetMessage?message_id=
-Q. How to delete messages?
-A. That's easy:
-- http://{host_ip}:{port}/DeleteMessage?application_id= 
-To delete all messages from a particular user
-- http://{host_ip}:{port}/DeleteMessage?session_id= 
-To delete all messages by session_id
-- http://{host_ip}:{port}/DeleteMessage?message_id= 
-To delete one specific message
+Q. How to get messages?<br>
+A. The messages can be received in 3 forms:<br>
+- By application_id (which is actually the user_id. That is, if we had a button navigating to that address, the caption was: "Get all your messages") <br>
+http://{host_ip}:{port}/GetMessage?application_id=<br>
+- By session_id <br>
+http://{host_ip}:{port}/GetMessage?session_id=<br>
+- And according to the message_id - that is to receive a specific message<br>
+http://{host_ip}:{port}/GetMessage?message_id=<br>
+Q. How to delete messages?<br>
+A. That's easy:<br>
+- http://{host_ip}:{port}/DeleteMessage?application_id= <br>
+To delete all messages from a particular user<br>
+- http://{host_ip}:{port}/DeleteMessage?session_id= <br>
+To delete all messages by session_id<br>
+- http://{host_ip}:{port}/DeleteMessage?message_id= <br>
+To delete one specific message<br>
 
 DESIGN DECISIONS
 ----------------
-In fact, the only thing I wasn't sure about was this:
-Setting the session_id for user - I thought of doing this by combining the time, date, and user_id. But if so - the same user's access from multiple computers should not be allowed ,to make sure the session number remains unique. (Because this allows only one specific user login at a specific date and time)
-So, when a user requests or deletes all messages with a certain session_id, it usually means - all my messages, from current sign in to the app.
+In fact, the only thing I wasn't sure about was this:<br>
+Setting the session_id for user - I thought of doing this by combining the time, date, and user_id. But if so - the same user's access from multiple computers should not be allowed ,to make sure the session number remains unique. (Because this allows only one specific user login at a specific date and time)<br>
+So, when a user requests or deletes all messages with a certain session_id, it usually means - all my messages, from current sign in to the app.<br>
 Because at this stage, there is no application sign-in form - I left it that way. But of course this should be addressed.
 
 And here are 6 things to do (And I'm definitely going to do that soon ..) to make this code (almost) perfect:
