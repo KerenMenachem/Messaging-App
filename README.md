@@ -9,41 +9,41 @@ This app allows users to share their friends with messages, view messages receiv
 
 INSTALLATION
 ------------
-I developed this app in Python using Flask - a great web development environment used in Python.
-It is very easy to start using flask, and these are the required installations (for command-line execution)
-First of all I recommend creating a virtual environment as follows:
-<python -m venv [verv_name_of_your_choice]>
-Now you have to activate it like this:
-<[your_venv_name]\Scripts\activate>
-Now you only have to install flask:
-<pip install flask>
-That's it. You're in!
+I developed this app in Python using Flask - a great web development environment used in Python.<br>
+It is very easy to start using flask, and these are the required installations (for command-line execution)<br>
+First of all I recommend creating a virtual environment as follows:<br>
+<python -m venv [verv_name_of_your_choice]><br>
+Now you have to activate it like this:<br>
+<[your_venv_name]\Scripts\activate><br>
+Now you only have to install flask:<br>
+<pip install flask><br>
+That's it. You're in!<br>
 
-Note! In this app I use a database to store the data (SQlite). I'm sure there are many more ways to do this, but I chose this way ...
-To use sqlite you will need to perform the following installations:
-<(venv) $ pip install flask-sqlalchemy>
-<(venv) $ pip install flask-migrate>
+Note! In this app I use a database to store the data (SQlite). I'm sure there are many more ways to do this, but I chose this way ...<br>
+To use sqlite you will need to perform the following installations:<br>
+<(venv) $ pip install flask-sqlalchemy><br>
+<(venv) $ pip install flask-migrate><br>
 
 USING THIS APP
 ----------------
-This guide I prefer to write in the form of questions and answers for ease of reading ...
-Q. How to send a message?
-A. When you navigate to the address http://{host_ip}:{port}/ Or alternatively to the address http://{host_ip}:{port}/index, You will get an html page where you can enter the message content and recipient names. Clicking the submit button activates the <AddMessage> function that creates a new message and stores it in the database.
+This guide I prefer to write in the form of questions and answers for ease of reading ...<br>
+Q. How to send a message?<br>
+A. When you navigate to the address http://{host_ip}:{port}/ Or alternatively to the address http://{host_ip}:{port}/index, You will get an html page where you can enter the message content and recipient names. Clicking the submit button activates the <AddMessage> function that creates a new message and stores it in the database.<br>
 Q. How to get messages?
 A. The messages can be received in 3 forms:
-1. By application_id (which is actually the user_id. That is, if we had a button navigating to that address, the caption was: "Get all your messages") 
+- By application_id (which is actually the user_id. That is, if we had a button navigating to that address, the caption was: "Get all your messages") 
 http://{host_ip}:{port}/GetMessage?application_id=
-2. By session_id 
+- By session_id 
 http://{host_ip}:{port}/GetMessage?session_id=
-3. And according to the message_id - that is to receive a specific message
+- And according to the message_id - that is to receive a specific message
 http://{host_ip}:{port}/GetMessage?message_id=
 Q. How to delete messages?
 A. That's easy:
-1. http://{host_ip}:{port}/DeleteMessage?application_id= 
+- http://{host_ip}:{port}/DeleteMessage?application_id= 
 To delete all messages from a particular user
-2. http://{host_ip}:{port}/DeleteMessage?session_id= 
+- http://{host_ip}:{port}/DeleteMessage?session_id= 
 To delete all messages by session_id
-3. http://{host_ip}:{port}/DeleteMessage?message_id= 
+- http://{host_ip}:{port}/DeleteMessage?message_id= 
 To delete one specific message
 
 DESIGN DECISIONS
