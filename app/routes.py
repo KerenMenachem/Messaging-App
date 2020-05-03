@@ -10,9 +10,10 @@ def index():
 @app.route('/AddMessage',methods = ['POST', 'GET'])
 def AddMessage():
    if request.method == 'POST':
-       user_id = request.form['user_id']
-       content = request.form['content']
-       paticipants = [request.form['participant1'],request.form['participant2'],request.form['participant3']]
+       data = request.form
+       user_id = data['user_id']
+       content = data['content']
+       paticipants = [data['participant1'],data['participant2'],data['participant3']]
        m = Message(user_id=user_id,content=content,participants=paticipants)
        db.session.add(m)
        db.session.commit()
