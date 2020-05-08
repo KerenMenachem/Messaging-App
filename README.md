@@ -53,7 +53,7 @@ Setting the session_id for user - I thought of doing this by combining the time,
 So, when a user requests or deletes all messages with a certain session_id, it usually means - all my messages, from current sign in to the app.<br>
 Because at this stage, there is no application sign-in form - I left it that way. But of course this should be addressed.
 
-And here are 6 things to do (And I'm definitely going to do that soon ..) to make this code (almost) perfect:
+And here are 4 things to do (And I'm definitely going to do that soon ..) to make this code (almost) perfect:
 --------------------------------------------------------------------------------------------------------
 1. Lazy loading. After all, you do not want to allow your user to request a huge amount of messages from the server..
 2. Use LoginManager to keep the user_id even when moving between pages. And, in general, to allow sign_ins and sign-ups.
